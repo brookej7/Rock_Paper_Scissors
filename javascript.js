@@ -58,9 +58,9 @@ function playRound(playerSelection, computerSelection=getComputerChoice()){
     } else if (playerSelection == "rock") {
         switch (computerSelection) {
             case "paper":
-                return [false, loseMessage]
+                return [LOSE, loseMessage]
             case "scissors":
-                return [true, winMessage]
+                return [WIN, winMessage]
         }
     }
 
@@ -122,9 +122,15 @@ function checkWinner () {
         message = "You have lost! The computer 5 round wins first."
 
     } else {
+        
+        const messageToRemove = document.querySelectorAll("#GameDoneMessage");
+        messageToRemove.forEach((message) => {
+            scoreboard.removeChild(message);
+        });
         return;
     }
     const gamesOutcomes = document.createElement("h2");
+    gamesOutcomes.setAttribute("id", "GameDoneMessage");
     gamesOutcomes.textContent = message;
     scoreboard.appendChild(gamesOutcomes);
 
