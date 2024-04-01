@@ -25,7 +25,7 @@ function toSentenceCase(word) {
 }
 
 function playRound(playerSelection, computerSelection=getComputerChoice()){
-    console.log(playerSelection)
+
     if(playerSelection == null) {
         return "Oops Invalid Input Try Again"
     }
@@ -63,12 +63,19 @@ function playRound(playerSelection, computerSelection=getComputerChoice()){
     return "Oops Invalid Input Try Again"
 }
 
-function playGame() {
-    let numRounds = 5;
+const results = document.querySelector(".Results");
 
-    for (i = 0; i < numRounds; i++) {
-        console.log(playRound(prompt("Enter rock, paper or scissors: ")))
-    }
+function playGame(playerChoice) {
+    const newResult = document.createElement("p");
+    newResult.textContent = playRound(playerChoice);
+    results.appendChild(newResult);
+
 }
 
-playGame()
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        playGame(button.id);
+    });
+});
