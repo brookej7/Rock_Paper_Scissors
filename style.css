@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: beige;
+}
+
+#heading {
+    font-size: 40px;
+    padding: 20px;
+}
+
+.options {
+    font-size: 30px;
+    padding: 50px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+button {
+    font-size: 25px;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.headerComponents {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Scoreboard {
+    flex-grow: 1;
+    padding: 50px;
+    font-size: 25px;
+}
+
+#GameDoneMessage {
+    font-size: 30px;
+}
+
+.roundOutcome {
+    font-size: 20px;
+}

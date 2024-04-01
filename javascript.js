@@ -81,7 +81,7 @@ function playGame(playerChoice) {
 
 }
 
-function updateScore(outcome) {
+function updateScore(outcome, result) {
 
     switch (outcome) {
         case WIN:
@@ -110,9 +110,12 @@ function updateScore(outcome) {
 function checkWinner () {
     let winner = false;
     let message = "";
+    const gamesOutcomes = document.createElement("h2");
     if (playerScore == 5 & computerScore == 5) {
         winner = DRAW;
         message = "It's a draw. You and the computer won 5 rounds."
+        gamesOutcomes.attribute
+        
     }
     else if (playerScore == 5) {
         winner = WIN;
@@ -125,14 +128,13 @@ function checkWinner () {
         
         const messageToRemove = document.querySelectorAll("#GameDoneMessage");
         messageToRemove.forEach((message) => {
-            scoreboard.removeChild(message);
+            results.removeChild(message);
         });
         return;
     }
-    const gamesOutcomes = document.createElement("h2");
     gamesOutcomes.setAttribute("id", "GameDoneMessage");
     gamesOutcomes.textContent = message;
-    scoreboard.appendChild(gamesOutcomes);
+    results.appendChild(gamesOutcomes);
 
     //Reset scores
     playerScore = 0;
